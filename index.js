@@ -35,6 +35,7 @@ const getIconBase64 = async () => {
     const files = await fs.readdir(iconsDir);
     const idx = getIconIdx(files);
     const filePath = `${iconsDir}${files[idx]}`;
+    console.log('NewIcon:', filePath);
     const result = await fs.readFile(filePath, 'base64');
     return result;
 }
@@ -66,5 +67,4 @@ const updateIcon = async () => {
 
 // 毎日0時5分にアイコン更新
 cron.schedule('0 5 0 * * *', () => pullRepository().then(updateIcon));
-
-
+console.log('TwitterIconAutoUpdater started');
