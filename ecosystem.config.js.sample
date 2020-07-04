@@ -1,0 +1,20 @@
+module.exports = {
+    apps: [
+        {
+        name: 'TwitterIconAutoUpdate',
+        script: 'index.js',
+        instances: 1,
+        autorestart: true,
+        watch: true,
+        max_memory_restart: '128M',
+        env: {
+            CONSUMER_KEY: '',
+            CONSUMER_SECRET: '',
+            ACCESS_TOKEN: '',
+            ACCESS_TOKEN_SECRET: '',
+            ICON_REPOSITORY: '',
+            ICON_REPOSITORY_DIR: './icons',
+        }
+        }
+    ]
+};

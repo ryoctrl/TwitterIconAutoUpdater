@@ -1,0 +1,4 @@
+node_modules/
+icons/
+ecosystem.config.js
+.env
