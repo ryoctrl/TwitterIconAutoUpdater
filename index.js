@@ -60,7 +60,7 @@ const updateIcon = async () => {
             return;
         }
 
-        console.log(body);
+        console.log(moment().format('YYYY/MM/DD HH:mm:ss'), 'icon updated');
     });
 };
 
