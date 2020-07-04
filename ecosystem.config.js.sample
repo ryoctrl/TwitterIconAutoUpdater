@@ -1,11 +1,12 @@
 module.exports = {
     apps: [
         {
-        name: 'TwitterIconAutoUpdate',
+        name: 'TwitterIconAutoUpdater',
         script: 'index.js',
         instances: 1,
         autorestart: true,
         watch: true,
+        ignore_watch: ["icons"],
         max_memory_restart: '128M',
         env: {
             CONSUMER_KEY: '',
