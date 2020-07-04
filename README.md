@@ -1,0 +1,5 @@
+# TwitterIconAutoUpdater
+
+Twitterアイコンを毎日変える奴。
+アイコン用のgitリポジトリ作って、twitterディレクトリの中に設定したいアイコンを入れておくと毎日変わる。
+
