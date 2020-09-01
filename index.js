@@ -20,11 +20,11 @@ const pullRepository = async () => {
 };
 
 // アイコン選択ロジック
-// 日付をアイコンの数で割って添え字にする
-// 毎日アイコンが変わる
+// 現在時間をアイコンの数で割って添え字にする
+// 毎時アイコンが変わる
 const getIconIdx = (icons) => {
-    const date = moment().date();
-    return date % icons.length;
+    const hour = moment().hour();
+    return hour % icons.length;
 }
 
 // 次に設定するアイコンをBase64で返す
@@ -65,6 +65,6 @@ const updateIcon = async () => {
     });
 };
 
-// 毎日0時5分にアイコン更新
-cron.schedule('0 5 0 * * *', () => pullRepository().then(updateIcon));
+// 毎時0分0秒にアイコン更新
+cron.schedule('0 0 * * * *', () => pullRepository().then(updateIcon));
 console.log('TwitterIconAutoUpdater started');
